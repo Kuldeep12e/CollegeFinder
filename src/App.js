@@ -34,8 +34,9 @@ const App = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `http://universities.hipolabs.com/search?name=${encodeURIComponent(query)}`
+        `/api/universities?name=${encodeURIComponent(query)}`
       );
+
       const data = await response.json();
 
       // Transform API response to match CollegeCard props
